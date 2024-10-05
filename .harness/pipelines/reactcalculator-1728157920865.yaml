@@ -56,12 +56,10 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: Helm Deployment
-                  identifier: helmDeployment
-                  type: HelmDeploy
-                  timeout: 10m
-                  spec:
-                    skipDryRun: false
+                  type: K8sRollingDeploy
+                  name: K8sRollingDeploy_1
+                  identifier: K8sRollingDeploy_1
+                  spec: {}
             rollbackSteps:
               - step:
                   name: Helm Rollback
