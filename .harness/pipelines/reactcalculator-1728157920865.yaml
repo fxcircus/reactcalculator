@@ -1,0 +1,42 @@
+pipeline:
+  identifier: Build_reactcalculator_1728157929891
+  name: Build reactcalculator
+  orgIdentifier: default
+  projectIdentifier: Roy_D
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: RoyGitHub
+        repoName: reactcalculator
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          caching:
+            enabled: true
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: installdependencies
+                  name: install dependencies
+                  spec:
+                    command: npm install
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: test
+                  name: test
+                  spec:
+                    command: npm run test
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
