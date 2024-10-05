@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: infra
+  identifier: infra
+  orgIdentifier: default
+  projectIdentifier: Roy_D
+  environmentRef: reactcalculator
+  deploymentType: NativeHelm
+  type: KubernetesDirect
+  spec:
+    connectorRef: royKube
+    namespace: roynamespace
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
