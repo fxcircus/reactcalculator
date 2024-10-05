@@ -1,6 +1,31 @@
 var express = require('express');
 var app = express();
 
+/*
+  Sample routes for the calculator app:
+
+  1. Addition:
+     Example: http://localhost:3000/add/10/5
+     Result: 15
+
+  2. Subtraction:
+     Example: http://localhost:3000/subtract/10/3
+     Result: 7
+
+  3. Multiplication:
+     Example: http://localhost:3000/multiply/4/2
+     Result: 8
+
+  4. Division:
+     Example: http://localhost:3000/divide/20/4
+     Result: 5
+
+  5. Division by zero (error case):
+     Example: http://localhost:3000/divide/5/0
+     Result: Division by zero error.
+*/
+
+
 // Addition
 app.get('/add/:num1/:num2', function (req, res) {
   const { num1, num2 } = req.params;
