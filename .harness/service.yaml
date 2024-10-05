@@ -3,3 +3,6 @@ service:
   identifier: reactcalculator
   orgIdentifier: default
   projectIdentifier: Roy_D
+  serviceDefinition:
+    spec: {}
+    type: Kubernetes
