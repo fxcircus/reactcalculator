@@ -26,6 +26,11 @@ var app = express();
 */
 
 
+// Root route
+app.get('/', function (req, res) {
+  res.status(200).send('Welcome to the Calculator API!');
+});
+
 // Addition
 app.get('/add/:num1/:num2', function (req, res) {
   const { num1, num2 } = req.params;
