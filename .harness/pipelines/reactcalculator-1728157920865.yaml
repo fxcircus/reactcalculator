@@ -56,13 +56,21 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: K8sBlueGreenStageScaleDown
-                  name: K8sBlueGreenStageScaleDown_1
-                  identifier: K8sBlueGreenStageScaleDown_1
-                  spec:
-                    deleteResources: false
+                  name: Rollout Deployment
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
                   timeout: 10m
-            rollbackSteps: []
+                  spec:
+                    skipDryRun: false
+                    pruningEnabled: false
+            rollbackSteps:
+              - step:
+                  name: Rollback Rollout Deployment
+                  identifier: rollbackRolloutDeployment
+                  type: K8sRollingRollback
+                  timeout: 10m
+                  spec:
+                    pruningEnabled: false
         tags: {}
         failureStrategies:
           - onFailure:
