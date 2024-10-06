@@ -65,7 +65,7 @@ pipeline:
                     pruningEnabled: false
                     manifests:
                       - manifest:
-                          identifier: reactcalculator-deployment
+                          identifier: reactcalculator
                           type: K8sManifest
                           spec:
                             store:
