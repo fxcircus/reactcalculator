@@ -18,5 +18,5 @@ service:
                   repoName: reactcalculator
                   branch: master
                   paths:
-                    - path/to/your/deployment.yaml
-                    - path/to/your/service.yaml
+                    - .harness/deployment.yaml
+                    - .harness/service.yaml
