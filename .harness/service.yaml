@@ -9,7 +9,7 @@ service:
       manifests:
         - manifest:
             identifier: reactcalculator-deployment
-            type: KubernetesManifest
+            type: K8sManifest
             spec:
               store:
                 type: Git
