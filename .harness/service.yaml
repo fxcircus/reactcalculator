@@ -14,8 +14,8 @@ service:
               store:
                 type: Git
                 spec:
-                  connectorRef: yourGitHubConnector
-                  repoName: your-repo-name
+                  connectorRef: RoyGitHub
+                  repoName: reactcalculator
                   branch: master
                   paths:
                     - path/to/your/deployment.yaml
