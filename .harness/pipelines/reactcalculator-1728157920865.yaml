@@ -53,10 +53,6 @@ pipeline:
             deployToAll: false
             infrastructureDefinitions:
               - identifier: royinfrastructure
-                spec:
-                  connectorRef: royKube
-                  namespace: default
-                  releaseName: reactcalculator
           execution:
             steps:
               - step:
