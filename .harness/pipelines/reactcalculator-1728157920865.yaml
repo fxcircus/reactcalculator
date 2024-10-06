@@ -63,6 +63,20 @@ pipeline:
                   spec:
                     skipDryRun: false
                     pruningEnabled: false
+                    manifests:
+                      - manifest:
+                          identifier: reactcalculator-deployment
+                          type: K8sManifest
+                          spec:
+                            store:
+                              type: Git
+                              spec:
+                                connectorRef: RoyGitHub
+                                repoName: reactcalculator
+                                branch: master
+                                paths:
+                                  - .harness/deployment.yaml
+                                  - .harness/service.yaml
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
