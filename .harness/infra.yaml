@@ -4,7 +4,7 @@ infrastructureDefinition:
   orgIdentifier: default
   projectIdentifier: Roy_D
   environmentRef: reactcalculator
-  deploymentType: NativeHelm
+  deploymentType: Kubernetes
   type: KubernetesDirect
   spec:
     connectorRef: royKube
