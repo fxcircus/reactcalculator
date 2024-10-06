@@ -1,13 +1,22 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: reactcalculator-service  
-  namespace: default             
-spec:
-  selector:
-    app: reactcalculator
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
-  type: LoadBalancer
+service:
+  name: reactcalculator
+  identifier: reactcalculator
+  orgIdentifier: default
+  projectIdentifier: Roy_D
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: reactcalculator-deployment
+            type: KubernetesManifest
+            spec:
+              store:
+                type: Git
+                spec:
+                  connectorRef: yourGitHubConnector
+                  repoName: your-repo-name
+                  branch: master
+                  paths:
+                    - path/to/your/deployment.yaml
+                    - path/to/your/service.yaml
