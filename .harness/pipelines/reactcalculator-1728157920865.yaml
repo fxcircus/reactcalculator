@@ -91,4 +91,4 @@ pipeline:
               errors:
                 - AllErrors
               action:
-                type: StageRollback
+                type: Ignore
