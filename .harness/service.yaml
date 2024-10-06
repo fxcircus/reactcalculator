@@ -1,8 +1,12 @@
-service:
-  name: reactcalculator
-  identifier: reactcalculator
-  orgIdentifier: default
-  projectIdentifier: Roy_D
-  serviceDefinition:
-    spec: {}
-    type: Kubernetes
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactcalculator-service
+spec:
+  selector:
+    app: reactcalculator
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer

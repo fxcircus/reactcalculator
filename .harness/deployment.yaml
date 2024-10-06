@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactcalculator
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reactcalculator
+  template:
+    metadata:
+      labels:
+        app: reactcalculator
+    spec:
+      containers:
+      - name: reactcalculator
+        image: your-docker-image:latest
+        ports:
+        - containerPort: 3000
