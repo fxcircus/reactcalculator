@@ -47,7 +47,7 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: reactcalculator
+            serviceRef: reactcalculatorservice
           environment:
             environmentRef: reactcalculator
             deployToAll: false
