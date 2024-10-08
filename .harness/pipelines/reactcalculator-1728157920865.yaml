@@ -31,6 +31,15 @@ pipeline:
                       npm install
                       npm run build --if-present
                       npm test
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: RoyDockerHubConnector
+                    repo: roydanielr/harnessartifact
+                    tags:
+                      - ${DRONE_BUILD_NUMBER}
           platform:
             os: Windows
             arch: Amd64
