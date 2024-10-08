@@ -25,4 +25,4 @@ Handles division by zero.
 Clone the repo.
 Run `npm install`.
 Start the app: `npm start`.
-Visit `http://localhost:3000` to access the calculator API.
+Visit `http://localhost:3000` to access the calculator API
