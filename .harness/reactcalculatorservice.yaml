@@ -1,0 +1,5 @@
+service:
+  name: reactcalculatorservice
+  identifier: reactcalculatorservice
+  orgIdentifier: default
+  projectIdentifier: Roy_D
