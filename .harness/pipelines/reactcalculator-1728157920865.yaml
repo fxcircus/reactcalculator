@@ -37,14 +37,14 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: RoyDockerHubConnector
-                    repo: roydanielr/harnessartifact
+                    repo: roydanielr/reactcalculator
                     tags:
                       - ${DRONE_BUILD_NUMBER}
           platform:
             os: Windows
             arch: Amd64
           runtime:
-            type: Cloud
+            type: Docker
             spec: {}
         type: CI
         description: ""
